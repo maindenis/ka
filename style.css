@@ -243,6 +243,19 @@ textarea:focus {
 
 }
 
+body{
+    position:fixed;
+}
+
+.wrapper {
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.content {
+    padding-bottom: 110px;
+}
+
 /*-------------------------------------------*/
 /* ----- REUSABLE COMPONENTS ------ */
 /*-------------------------------------------*/
@@ -333,9 +346,9 @@ textarea:focus {
 
 /*-- /Browser Btn --*/
 
-.wrapper {
+/*.wrapper {
     padding-bottom: 110px;
-}
+}*/
 
 /*-- Section 1 - order --*/
 
