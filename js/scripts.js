@@ -13,14 +13,16 @@ $(document).ready(function() {
 
 var last_scroll = 0;
 window.onscroll = function(){
+    setTimeout(function() {
+
   if(window.scrollY > last_scroll){
     $(".wrapper").addClass("bottom");
-  }else{
-    setTimeout(function() {
-        $(".wrapper").removeClass("bottom");
-    }, 500); 
+  }
+  if(window.scrollY< last_scroll ){
+    $(".wrapper").removeClass("bottom");
   }
   last_scroll = window.scrollY;
+}, 300); 
 }
 
 // var timer;
