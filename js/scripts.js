@@ -9,18 +9,16 @@
    // scrollPos = st;    
 // });
 
-
-
 $(document).ready(function() {
 
 var last_scroll = 0;
 window.onscroll = function(){
   if(window.scrollY > last_scroll){
-    // console.log('down');
     $(".wrapper").addClass("bottom");
   }else{
-    // console.log('up');
-    $(".wrapper").removeClass("bottom");
+    setTimeout(function() {
+        $(".wrapper").removeClass("bottom");
+    }, 500); 
   }
   last_scroll = window.scrollY;
 }
