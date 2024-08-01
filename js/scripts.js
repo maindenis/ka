@@ -2,24 +2,22 @@ $(document).ready(function() {
 
     var last_scroll = 0;
     window.onscroll = function(){
+        bottomScrollCoord = $(document).scrollTop() + $(window).height();
+        bottomCoord = $(document).height() - 30;
         setTimeout(function() {
-          if(window.scrollY > last_scroll){
+          if(window.scrollY > last_scroll ||
+            bottomScrollCoord >= bottomCoord){
             $(".wrapper").addClass("bottom");
           }
           if(window.scrollY< last_scroll ){
             $(".wrapper").removeClass("bottom");
           }
           last_scroll = window.scrollY;
-        }, 300); 
-        bottomScrollCoord = $(document).scrollTop() + $(window).height();
-        bottomCoord = $(document).height() - 10;
-        if(bottomScrollCoord >=bottomCoord) {
-            $(".wrapper").addClass("bottom");
-        }
+        }, 300);
     }
 
     bottomScrollCoord = $(document).scrollTop() + $(window).height();
-    bottomCoord = $(document).height() - 10;
+    bottomCoord = $(document).height() - 30;
     if(bottomScrollCoord >=bottomCoord) {
         $(".wrapper").addClass("bottom");
     }
