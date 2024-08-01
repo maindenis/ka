@@ -3,7 +3,7 @@ $(document).ready(function() {
     var last_scroll = 0;
     window.onscroll = function(){
         bottomScrollCoord = $(document).scrollTop() + $(window).height();
-        bottomCoord = $(document).height() - 30;
+        bottomCoord = $(document).height() - 50;
         setTimeout(function() {
           if(window.scrollY > last_scroll ||
             bottomScrollCoord >= bottomCoord){
@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
 
     bottomScrollCoord = $(document).scrollTop() + $(window).height();
-    bottomCoord = $(document).height() - 30;
+    bottomCoord = $(document).height() - 50;
     if(bottomScrollCoord >=bottomCoord) {
         $(".wrapper").addClass("bottom");
     }
