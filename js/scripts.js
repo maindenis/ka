@@ -1,75 +1,28 @@
-// var scrollPos = 0;
-// $(window).scroll(function(){
-   // var st = $(this).scrollTop();
-   // if (st > scrollPos){
-   //   $(".wrapper").addClass("bottom");
-   // } else {     
-   //   $(".wrapper").removeClass("bottom");
-   // }
-   // scrollPos = st;    
-// });
-
 $(document).ready(function() {
 
-var last_scroll = 0;
-window.onscroll = function(){
-    setTimeout(function() {
-      if(window.scrollY > last_scroll){
+    var last_scroll = 0;
+    window.onscroll = function(){
+        setTimeout(function() {
+          if(window.scrollY > last_scroll){
+            $(".wrapper").addClass("bottom");
+          }
+          if(window.scrollY< last_scroll ){
+            $(".wrapper").removeClass("bottom");
+          }
+          last_scroll = window.scrollY;
+        }, 300); 
+        bottomScrollCoord = $(document).scrollTop() + $(window).height();
+        bottomCoord = $(document).height() - 10;
+        if(bottomScrollCoord >=bottomCoord) {
+            $(".wrapper").addClass("bottom");
+        }
+    }
+
+    bottomScrollCoord = $(document).scrollTop() + $(window).height();
+    bottomCoord = $(document).height() - 10;
+    if(bottomScrollCoord >=bottomCoord) {
         $(".wrapper").addClass("bottom");
-      }
-      if(window.scrollY< last_scroll ){
-        $(".wrapper").removeClass("bottom");
-      }
-      last_scroll = window.scrollY;
-    }, 300); 
-}
-
-// var timer;
-// $(window).on('wheel', function(e){
-//     if (e.originalEvent.wheelDelta >= 0){
-//         console.log('Вверх');
-//         // clearTimeout(timer);
-//     } else {
-//         console.log('Вниз');
-//         // clearTimeout(timer);
-//     }
-// });
-
-// let lastScrollTop = 0;
-// let scrollable = document.querySelector("body");
-
-// scrollable.addEventListener("scroll", function() {
-//   let scrollTop = scrollable.scrollTop;
-//   if (scrollTop > lastScrollTop) {
-//     // console.log("Прокрутка вниз");
-//     $(".wrapper").addClass("bottom");
-//   } else {
-//     // console.log("Прокрутка вверх");
-//     $(".wrapper").removeClass("bottom");
-//   }
-//   lastScrollTop = scrollTop;
-// });
-
-//     document.body.addEventListener('mousewheel DOMMouseScroll MozMousePixelScroll', e => {
-//     const delta = ((e.deltaY || -e.wheelDelta || e.detail) >> 10) || 1
-//     const direction = Math.sign(delta) //  результат 1 или -1
-//     if (direction == 1){
-//         $(".wrapper").addClass("bottom");
-//     } else {
-//         $(".wrapper").removeClass("bottom");
-//     }
-// });
-
-// $(window).bind('mousewheel DOMMouseScroll MozMousePixelScroll', function(event) {
-//     delta = parseInt(event.originalEvent.wheelDelta || -event.originalEvent.detail);
-//     if (delta >= 0) {
-//       // $('#result').html('Вверх');
-//       $(".wrapper").removeClass("bottom");
-//     } else {
-//       // $('#result').html('Вниз');
-//       $(".wrapper").addClass("bottom");
-//     }
-//   });
+    }
 
     $(".dr_title").on("click", function(e) {
       e.preventDefault();
