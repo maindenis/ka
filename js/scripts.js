@@ -14,6 +14,8 @@ $(document).ready(function() {
                 $(".wrapper").removeClass("bottom");
               }
               last_scroll = window.scrollY;
+          } else {
+                $(".wrapper").addClass("bottom");
           }
           }, 500);
     }
