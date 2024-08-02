@@ -43,6 +43,9 @@
 }
 
 html {
+    height: 100%;
+    overflow-x:hidden;
+    -webkit-overflow-scrolling:touch;
     -webkit-text-size-adjust: 100%;
 }
 
@@ -243,14 +246,13 @@ textarea:focus {
 
 }
 
-body{
+/*body{
     position:fixed;
-}
-
-.wrapper {
-    overflow-y: auto;
-    height: 100vh;
-}
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}*/
 
 .content {
     padding-bottom: 110px;
